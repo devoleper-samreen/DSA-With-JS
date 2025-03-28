@@ -54,3 +54,37 @@ var searchRange = function(nums, target) {
     return ans
 };
 ```
+
+
+
+## 2️⃣ Find Insert Position (Leetcode 35)  
+
+### **Approach:**
+
+- Optimized: Use Binary Search O(logn) ✅
+
+- If target is found, return its index.
+
+- If target is not found, return start, because start will be at the correct insertion index.
+
+ 
+```js
+
+var searchInsert = function(nums, target) {
+    let start = 0, end = nums.length-1, mid;
+
+    while(start<=end){
+        mid = Math.floor(start+(end-start)/2)
+
+        if(nums[mid]==target){
+            return mid
+        }else if(nums[mid]<target){
+            start = mid+1
+        }else{
+            end = mid-1
+        }
+    }
+
+    return start
+};
+```
