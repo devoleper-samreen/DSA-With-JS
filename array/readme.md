@@ -23,3 +23,30 @@ function twoSum(nums, target) {
     }
     return [];
 }
+```
+
+## 2️⃣ Best Time To Buy And Sell Stocks
+
+### **Approach:**
+- Brute Force: Try all pairs using two nested loop (O(n²))
+- Optimized: (O(n)) ✅
+- Track karna hain min price, har din taki buy price minimum ho.
+- Calculate max profit har din using (current price - minPrice).
+
+```js
+var maxProfit = function(arr) {
+    let profit=0
+    let maxProfit=0
+    let minPrice = Infinity
+
+    for(let i=0; i<arr.length; i++){
+        minPrice = Math.min(minPrice, arr[i])
+        profit = arr[i] - minPrice
+        maxProfit = Math.max(maxProfit, profit)
+    }
+
+    return maxProfit
+};
+```
+
+
