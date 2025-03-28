@@ -4,7 +4,7 @@
 
 ### **Approach:**
 
-- Optimized: Use Binary Search O(nlogn) ✅
+- Optimized: Use Binary Search O(logn) ✅
 
  
 ```js
