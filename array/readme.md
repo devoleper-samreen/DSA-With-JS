@@ -25,6 +25,7 @@ function twoSum(nums, target) {
 }
 ```
 
+
 ## 2️⃣ Best Time To Buy And Sell Stocks
 
 ### **Approach:**
@@ -48,5 +49,37 @@ var maxProfit = function(arr) {
     return maxProfit
 };
 ```
+
+
+## 3️⃣ Best Time To Buy And Sell Stocks II
+
+### **Approach:**
+
+- Track karna hain min price, har din taki buy price minimum ho.
+- Price increase hote hi turant sell karna hain
+- Then next buy karna hain and sell karna hain
+- All sell ka profit calculate karna hain
+
+
+```js
+var maxProfit = function(arr) {
+    let minPrice = Infinity
+    let profit = 0
+
+    
+    for(let i=0; i<arr.length; i++){
+        minPrice = Math.min(minPrice, arr[i])
+
+        if(arr[i]>minPrice){
+            profit += arr[i] - minPrice;
+            minPrice = arr[i]
+        }
+    }
+
+    return profit
+    
+};
+```
+
 
 
