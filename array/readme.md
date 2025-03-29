@@ -116,7 +116,7 @@ var majorityElement = function(nums) {
 
 
 
-## 3️⃣ Rotate Array  (n/2)
+## 3️⃣ Rotate Array
 
 ### **Approach:**
 
@@ -156,4 +156,40 @@ var rotate = function(nums, k) {
     reverse(nums, k, n-1)
 };
 ```
+
+
+## 3️⃣  Remove Duplicates from Sorted Array
+
+### **Approach:**
+
+- Ek pointer i unique values track karega.
+
+- Dusra pointer j array traverse karega.
+
+- nums[i] aur nums[j] ko compare karna hai.
+
+- Agar nums[j] alag hai nums[i] se, toh i ko aage badhao aur nums[i] = nums[j] kar do.
+
+- Aakhir mein i + 1 return karna hai kyunki index 0-based hota hai.
+
+
+```js
+
+var removeDuplicates = function(nums) {
+   if (nums.length === 0) return 0; 
+
+    let i = 0; // Pointer for unique elements
+
+    for (let j = 1; j < nums.length; j++) {
+        if (nums[j] !== nums[i]) {  // Found a new unique element
+            i++; 
+            nums[i] = nums[j];  // Place it at the correct position
+        }
+    }
+
+    return i + 1;
+    
+};
+```
+
 
