@@ -83,3 +83,77 @@ var maxProfit = function(arr) {
 
 
 
+## 3️⃣ Majority Element (n/2)
+
+### **Approach:**
+
+- Ek candidate le lo (start me koi bhi) aur count 1 rakho
+
+- Same element mile to count++ karo, nahi mila to count-- karo
+
+- Agar count 0 ho jaye, to new candidate le lo
+
+- End tak jo candidate bachega, wahi majority element hoga
+
+
+```js
+
+var majorityElement = function(nums) {
+    let count = 0, candidate = null
+
+    for(let num of nums){
+        if(count===0){
+            candidate = num
+        }
+
+        count += (num===candidate)?1 : -1
+    }
+
+    return candidate
+    
+};
+```
+
+
+
+## 3️⃣ Rotate Array  (n/2)
+
+### **Approach:**
+
+- Pura array reverse karo
+
+- First k elements reverse karo
+
+- Last n-k elements reverse karo
+
+
+```js
+
+function reverse(nums, s, e){
+    while(s<=e){
+        [nums[s], nums[e]] = [nums[e], nums[s]]
+        s++
+        e--
+    }
+}
+
+var rotate = function(nums, k) {
+    const n = nums.length
+
+    if(n==1){
+        return 
+    }
+
+    k = k%n
+
+    //reverse full array
+    reverse(nums, 0, n-1)
+
+    //reverse first k element
+    reverse(nums, 0, k-1)
+
+    //reverse k to n element 
+    reverse(nums, k, n-1)
+};
+```
+
